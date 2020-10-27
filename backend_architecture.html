@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>CHEF-IT! CS5744-P1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 43px;
+  bottom: 0;
+  height: inherit;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-theme-l1">Chef-It!</a>
+    <a href="background.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Background & Use Cases</a>
+    <a href="requirements.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Requirements</a>
+    <a href="backend_architecture.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Backend Architecture</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
+  </div>
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Menu</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Link</a>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+    <h1 class="w3-text-teal">Backend Architecture</h1>
+    <p>Our application will utilize the basic components of a web application. Chef-It! will operate based on Amazon Web Services (AWS). The software architecture of Chef-It! will consist of two main parts: Client and Backend.</p>
+      <h2 class="w3-text-teal">Client</h2>
+      <h3 class="w3-text-teal">Overview</h3>
+      <p>
+        The Client is any device running the application. These devices will include, at minimum, supported browsers running on a computer (laptop or desktop) or the Chef-It! App on smartphones or tablets. The team at Chef-It! will develop their own iOS and Android apps. In doing so, the team at Chef-It! will be able to control the app and other devices through the SDK for the following reasons:
+        <ul>
+            <li>Will allow us to utilize efficiencies on each operation system to provide a better experience for every user on every client and device</li>
+            <li>Provide the capability to adapt services smoothly and transparently under various circumstances</li>
+        </ul>
+      </p>
+      <h3 class="w3-text-teal">Components</h3>
+      <p>
+        Chef-It! has a requirement to be responsive, fast, and highly available. Chef-It! will control its performance via the software development kit (SDK). Figure C-1 illustrates a typical client structure. 
+      </p>
+      <img src="images/client_app_component.png" style="display: block;
+      text-align: center;
+      margin: auto;" width="75%" height="auto"></img>
+      <div class="w3-center"><p><b>Figure C-1.</b> Example of system path/logic per client connection type.
+      </p></div>
+      <p>
+        Client Apps will separate connections to the backend into 2 categories: content discovery and grocery tracking. The content discovery will provide data to display on the UI including recipes, user information, ingredients, and videos. The grocery tracking will utilize built-in GPS on most smartphones and geo-location services on other clients to provide constant polling to the Chef-It! Control Plane (CCP) to constantly update a user’s location to find grocery stores nearby,access their APIs,and find deals/pickup services. 
+
+      </p>
+      <h2 class="w3-text-teal">Backend</h2>
+      <p>
+        The backend of our system comprises almost everything including services, databases, and storages and will run entirely on AWS cloud. Some components of the Backend include:
+        <ul>
+            <li>Databases: Chef-It! will primarily use scalable distributed databases such as Cassandra and/or AWS DynamoDB.</li>
+            <li>Business logic Microservices: Various frameworks created by Chef-It! developers.</li>
+            <li>Computing Instances: utilize AWS EC2 which can be easily scaled to meet future demand.</li>
+        </ul>
+      </p>
+      <h3 class="w3-text-teal">Architecture</h3>
+      <img src="images/backend_architecture.png" style="display: block;
+      text-align: center;
+      margin: auto;" width="75%" height="auto"></img>
+      <div class="w3-center"><p><b>Figure BA-1.</b> The Chef-It! Backend Architecture.</p></div>
+      <p>
+          <ol>
+              <li>The client sends a request to the Backend. Since the Backend is running on AWS the request is handled by an AWS Load Balancer (AWS Ext.LB).</li>
+              <li>The AWS Ext. LB will forward the request to the API Gateway Service running on EC2 instances. The API Gateway Service is named “Edge” and is built by the Chef-It Team to allow dynamic routing, traffic monitoring and security, and increase resilience to failures. The Edge component will take the request and apply it to predefined filters corresponding to business logics and then forward the request to the Application API for further handling.</li>
+              <li>The Application API component contains the core business logic behind the chef-it application. All of the APIs are contained within this module and include several different types of APIs, each corresponding to different user activities/capabilities. Some examples include the Signup API, where users can register, or a Recommendation API for retrieving recipe recommendations.</li>
+              <li>The API will call a microservice (or sequences of microservices) to fulfill the request. An example would be the Signup API. Which would call a microservice to obtain, validate, and compare data in the request with data from the datastores. Then it would utilize another microservice to send a verification email or text message to the user at the appropriate email or phone number.</li>
+              <li>Microservices are the backbone of the backend architecture, and are small stateless programs that fulfill incoming requests through an API. Due to the complexity of the system, Chef-It! will utilize the open source software called Hystrix (by Netflix) to isolate each microservice from the caller process. This will allow us to  control cascading failures and enable resilience. After each run, Hystrix will cache its result to allow faster access for specific critical requests.</li>
+              <li>Microservices can utilize the datastores and cache to save or obtain data during its process.</li>
+              <li>Microservice can utilize the Processing Pipeline for real time processing or batch processing.</li>
+          </ol>
+        </p>
+        <h3 class="w3-text-teal">API Gateway Service</h3>
+        <p>
+            Chef-It! will design the API Gateway service while utilizing Netflix’s open source Zuul [5] implementation. Zuul’s software was chosen primarily for its resiliency and scalability capabilities.  If there is a need to increase service availability, this component can easily be deployed to EC2 instances across different regions.The API Gateway service resolves all requests from clients by communicating with the AWS External Load Balancers.
+        </p>
+        <img src="images/api_gateway_service.png" style="display: block;
+        text-align: center;
+        margin: auto;" width="auto" height="auto"></img>
+        <div class="w3-center"><p><b>Figure BA-2.</b> Overview of Zuul: The API Gateway Service.</p></div>
+        <p>
+            Initially, the request gets routed to the Netty Server Handlers which are responsible for handling the network protocol, web server, and proxying work. This abstraction leaves the majority of heavy lift to the filters. The request is sent to the inbound filters which can be used for authentication, routing and manipulating the request. Next, the request is sent to an endpoint filter which can return a static response or  route the request to the appropriate Application API in the backend. Lastly, before a response is sent, it gets decorated by the Outbound filters which also track metrics such as error rates, return codes, etc. These metrics will be monitored by the Chef-It! Team for continuous improvement and anomaly detection. Zuul is also able to discover new Application API by integrating with our service discovery module. This will allow for onboarding new application APIs, load tests, and service rerouting seamlessly, without impact to uptime or customers. 
+        </p>
+        <h3 class="w3-text-teal">Application API</h3>
+        <p>
+            The application API is directly tied to Chef-It!’s core business functionalities. It serves as the orchestration layer to the other microservices. The API will follow the RESTful API [6] format to increase compatibility and reusability, as it is the architectural standard for web-based applications. The API proves the logic of converting a request to a composition of calls to the underlying microservices in correct order. While conducting these calls, the Application API can obtain additional data from other data stores to construct the appropriate responses. Chef-It!’s Application API is comprised of 8 categories:
+            <ol>
+                <li>Signup API-provides functionality for non-members such as sign-up, trials, billing, etc.</li>
+                <li>Login API- provides functionality for members such as  user authorization such as login, account information</li>
+                <li>Discovery API- used for searching recipes</li>
+                <li>Grocery API- used for shopping for ingredients at local grocery stores</li>
+                <li>Play API- for video streaming of recipe tutorials</li>
+                <li>Feedback API- provides ability to users to provide feedback for recipes in the form of comments/posts and rating values.</li>
+                <li>Payment API- provides functionality for all transactions.</li>
+                <li>Ingredients API - provides the ability for users to select ingredients from recipes that they own and/or might need</li>
+            </ol>
+        </p>
+        <p>
+            The Application API component must be able to accept and process large columns of requests and construct appropriate responses. Our Architecture will utilize concepts from both synchronous and asynchronous execution calls. 
+        </p>
+        <img src="images/executionstate.png" style="display: block;
+        text-align: center;
+        margin: auto;" width="auto" height="auto"></img>
+        <div class="w3-center"><p><b>Figure BA-3.</b>  Execution methodology to handle large volumes of requests.</p></div>
+        <p>
+            The input and outputs (I/O) will be asynchronous, with the inputs being the requests from the API gateway Service.  Each request will then get placed into the Network event loop for processing. Rather than having independents threads (async execution), we will utilize a synchronous exception call stack and thread handler to block each request to run certain commands such as getDeviceInfo, get Customer Info, etc. before going to a non blocking output known as the Outgoing Event Loop. This loop will call the appropriate microservices and once complete, the dedicated thread would construct the corresponding response.
+        </p>
+        <h3 class="w3-text-teal">Mircroservices</h3>
+        <img src="images/microservices_implementation.png" style="display: block;
+        text-align: center;
+        margin: auto;" width="auto" height="auto"></img>
+        <div class="w3-center"><p><b>Figure BA-4.</b> Overview of Microservice Implementation</p></div>
+        <p>
+            A microservice can function as an independent module or can call other microservices via REST. Figure BA-4, illustrates the structural component of a microservice. The implementation of the microservices can utilize the Network event loop to obtain requests and results from other microservices. While each microservice can utilize its own datastore,  it can store recent and/or heavily used queries or results into an in-memory cache. 
+        </p>
+        <img src="images/microservices-example.png" style="display: block;
+        text-align: center;
+        margin: auto;" width="auto" height="auto"></img>
+        <div class="w3-center"><p><b>Figure BA-5.</b> UI/UX of grocer microservice</p></div>
+
+    </div>
+    </div>  
+    <!-- END MAIN -->
+
+    <footer id="myFooter">
+        <div class="w3-container w3-theme-l1">
+        <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+        </div>
+    </footer>
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+</body>
+</html>
