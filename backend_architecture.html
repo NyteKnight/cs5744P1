@@ -150,7 +150,15 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         text-align: center;
         margin: auto;" width="auto" height="auto"></img>
         <div class="w3-center"><p><b>Figure BA-5.</b> UI/UX of grocer microservice</p></div>
-
+        <h3 class="w3-text-teal">Processing Pipeline</h3>
+        <p>
+          The processing pipeline is an essential piece of infrastructure that enables data driven engineering. The pipeline utilizes Kafka, a cluster messaging service, as its backbone. It is responsible for producing, collection, processing, aggregating and moving all microservice events in almost real-time. As Kafka utilizes a clustered event-driven architecture, combined with AWS cloud features, it is able to automatically scale as the number of users increases. Figure BA-5 Below illustrates the general architecture of the processing pipeline.
+        </p>
+        <img src="images/processing_pipeline.png" style="display: block;
+        text-align: center;
+        margin: auto;" width="auto" height="auto"></img>
+        <div class="w3-center"><p><b>Figure BA-5.</b> Event-Driven Architecture of Processing Pipeline</p></div>
+        <p>Events are produced by the microservices through API calls to the Kafka cluster. Based on the topic of the event, the router module (within kafka) routes the message/request to different databases or applications such as elastic search or S3.The Kafka Consumer can take a message as an input and run different tasks including the decorating and routing of requests to the stream processing as a service platform. SPaaS will allow engineers to build and monitor their custom managed application while the platform can take care of scalability and operations.</p>
     </div>
     </div>  
     <!-- END MAIN -->
