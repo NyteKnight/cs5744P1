@@ -45,7 +45,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
   <a class="w3-bar-item w3-button w3-hover-black" href="conclusion.html">Conclusion</a>
 </nav>
 
-
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
@@ -54,37 +53,44 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h2 class="w3-text-teal">Background</h2>
+      <!-- <h1 class="w3-text-teal">Requirements Summary</h1> -->
+      <h2 class="w3-text-teal">Conclusion</h2>
       <p>
-        The year 2020 has seen restaurants, gathering spaces, sporting events, and more close down indefinitely due to the ongoing COVID-19 pandemic. This has caused people to flock to grocery stores in efforts to secure ingredients to keep their families fed. Many people would like to cook, but don’t know how. Some have ingredients, but have no idea how to make them into a satisfying meal. Still others may be uncomfortable going out to get groceries amidst the pandemic and more comfortable ordering their meals over the internet. Our product “Chef It!” seeks to resolve these problems and more by providing a platform for experts and newbies alike to share recipes complete with ingredient lists, helpful instructions, ratings, and reviews. Chef It! also allows users to stream video tutorials to assist beginner cooks.
+        Our team was tasked with creating an application that helps people become better chefs. To accomplish this, we employed a Client-Server model, using microservices to fulfill tasks where possible and Cloud Services to provide flexibility and scalability. The product we created in the Chef-It! Application is designed to be reliable, fast, and lightweight on the Client end to provide a great user experience, while meeting all functional and non-functional requirements. We have created in our application a novel method of interfacing with local grocers through use of our custom API Gateway Service, Edge, and Chef-It! Control Plane. In conclusion, we consider this a complete high-level application design that could be successfully implemented in the real world.
       </p>
+      <h2 class="w3-text-teal">References</h2>
+      <h4 class= "w3-text-teal"> High-Level Design</h4>
       <p>
-        For this product, the customer will be our users. Our platform will not target any one group of people, but instead appeal to all ages, cultural backgrounds, and geographies. The benefit we see to choosing this method is that we will invite the widest array of cuisine if we can attract the most diverse user-base. The key to making this diversity target feasible is to make the application simple to navigate and provide a user experience that maintains a high customer retention rate.
+          <ol>
+              <li>“Introducing Hystrix for Resilience Engineering”, Ben Christensen https://netflixtechblog.com/introducing-hystrix-for-resilience-engineering-13531c1ab362/</li>
+              <li>“Mastering Chaos - A Netflix Guide to Microservices”, Josh Evans https://cloudbestpractices.net/mastering-chaos-netflix/</li>
+              <li>Building and Scaling Data Lineage at Netflix to Improve Data Infrastructure Reliability, and Efficiency. By Di Lin, Girish Lingappa, Jitender Aswani on The Netflix Tech Blog. Mar 25, 2019.https://netflixtechblog.com/building-and-scaling-data-lineage-at-netflix-to-improve-data-infrastructure-reliability-and-1a52526a7977</li>
+              <li>Kafka Inside Keystone Pipeline. By Real-Time Data Infrastructure Team. April 27, 2016.https://netflixtechblog.com/kafka-inside-keystone-pipeline-dd5aeabaf6bb</li>
+              <li>Open Sourcing Zuul 2 Arthur Gonigberg ( @agonigberg ), Mikey Cohen (@moldfarm ), Michael Smith (@kerumai ), Gaya Varadarajan ( @gaya3varadhu ), Sudheer Vinukonda ( @apachesudheerv ), Susheel Aroskar (@susheelaroskar ) https://netflixtechblog.com/open-sourcing-zuul-2-82ea476cb2b3
+            </li>
+            <li>RESTful API, Copyright © 2020 · restfulapi.net https://restfulapi.net/</li>
+            <li>Engineering Trade-Offs and The Netflix API Re-Architecture. By Katharina Probst and Justin Becker on The Netflix Tech Blog. Aug 23, 2016.https://netflixtechblog.com/engineering-trade-offs-and-the-netflix-api-re-architecture-64f122b277dd</li>
+          </ol>
       </p>
-      <h2 class="w3-text-teal">Use Cases</h2> 
+      <h4 class= "w3-text-teal">Design Rational</h4>
       <p>
-        Alex is a 20 year old student who lives on a college campus. Alex has, up until this point, has been going to the school cafeteria and restaurants to eat. Unfortunately, due to COVID19, Alex would like to prepare his own food to reduce the risk of contracting the pandemic. Alex would like to learn beginner friendly recipes and keep a list of favorite recipes he liked. Finally. Alex would like to rate the recipe that he cooked.
+          <ol>
+              <li>https://gs.statcounter.com/os-market-share/mobile/worldwide</li>
+              <li>https://www.statista.com/statistics/271774/share-of-android-platforms-on-mobile-devices-with-android-os/#:~:text=Around%2060%20percent%20of%20Android,devices%20are%20running%20on%20the</li>
+              <li>https://gs.statcounter.com/ios-version-market-share/mobile-tablet/worldwide</li>
+              <li>https://www.w3counter.com/globalstats.php</li>
+          </ol>
       </p>
-      <img src="images/usecase_img1.png" style="display: block;
-      text-align: center;
-      margin: auto;" width="auto" height="auto"></img>
-      <p>
-        Laura is a 38 year old mother with two children. She would often prepare meals for her children by looking up recipes and buying ingredients at the grocery store. Due to the pandemic, Laura would like to reduce the amount of time at the grocery store, use a recipe app to look for meals that can feed a family, use a recipe app to order ingredients she is missing from a recipe, and read user feedback on the recipes.
-      </p>
-      <img src="images/diff_mediums.png" style="display: block;
-      text-align: center;
-      margin: auto;" width="auto" height="auto"></img>
-      
-      
-    </div>
-    </div>  
-    <!-- END MAIN -->
+  </div>
+  </div>
 
-    <footer id="myFooter">
-        <div class="w3-container w3-theme-l1">
-        <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
-        </div>
-    </footer>
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l1">
+      <h4>Created by Heagan Ahmed, Alan Huang, and Keanan Zafar</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
 </div>
 
 <script>
