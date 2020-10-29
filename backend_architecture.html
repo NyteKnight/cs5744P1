@@ -67,7 +67,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       </p>
       <h3 class="w3-text-teal">Components</h3>
       <p>
-        Chef-It! has a requirement to be responsive, fast, and highly available. Chef-It! will control its performance via the software development kit (SDK). Figure C-1 illustrates a typical client structure. 
+        Chef-It! has requirements to be responsive, fast, and highly available. Chef-It! will control its performance via the software development kit (SDK). Figure C-1 illustrates a typical client structure. 
       </p>
       <img src="images/client_app_component.png" style="display: block;
       text-align: center;
@@ -75,7 +75,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
       <div class="w3-center"><p><b>Figure C-1.</b> Example of system path/logic per client connection type.
       </p></div>
       <p>
-        Client Apps will separate connections to the backend into 2 categories: content discovery and grocery tracking. The content discovery will provide data to display on the UI including recipes, user information, ingredients, and videos. The grocery tracking will utilize built-in GPS on most smartphones and geo-location services on other clients to provide constant polling to the Chef-It! Control Plane (CCP) to constantly update a user’s location to find grocery stores nearby,access their APIs,and find deals/pickup services. 
+        Client Apps will separate connections to the backend into 2 categories: content discovery and grocery tracking. The content discovery will provide data to display on the UI including recipes, user information, ingredients, and videos. The grocery tracking will utilize built-in GPS on most smartphones and geo-location services on other clients to provide constant polling to the Chef-It! Control Plane (CCP) to constantly update a user’s location to find grocery stores nearby, access their APIs, and find deals/pickup services. 
 
       </p>
       <h2 class="w3-text-teal">Backend</h2>
@@ -105,7 +105,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         </p>
         <h3 class="w3-text-teal">API Gateway Service</h3>
         <p>
-            Chef-It! will design the API Gateway service while utilizing Netflix’s open source Zuul [5] implementation. Zuul’s software was chosen primarily for its resiliency and scalability capabilities.  If there is a need to increase service availability, this component can easily be deployed to EC2 instances across different regions.The API Gateway service resolves all requests from clients by communicating with the AWS External Load Balancers.
+            Chef-It! will design the API Gateway service while utilizing Netflix’s open source Zuul [5] implementation. Zuul’s software was chosen primarily for its resiliency and scalability capabilities. If there is a need to increase service availability, this component can easily be deployed to EC2 instances across different regions.The API Gateway service resolves all requests from clients by communicating with the AWS External Load Balancers.
         </p>
         <img src="images/api_gateway_service.png" style="display: block;
         text-align: center;
@@ -152,13 +152,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
         <div class="w3-center"><p><b>Figure BA-5.</b> UI/UX of grocer microservice</p></div>
         <h3 class="w3-text-teal">Processing Pipeline</h3>
         <p>
-          The processing pipeline is an essential piece of infrastructure that enables data driven engineering. The pipeline utilizes Kafka, a cluster messaging service, as its backbone. It is responsible for producing, collection, processing, aggregating and moving all microservice events in almost real-time. As Kafka utilizes a clustered event-driven architecture, combined with AWS cloud features, it is able to automatically scale as the number of users increases. Figure BA-5 Below illustrates the general architecture of the processing pipeline.
+          The processing pipeline is an essential piece of infrastructure that enables data driven engineering. The pipeline utilizes Kafka, a cluster messaging service, as its backbone. It is responsible for producing, collection, processing, aggregating and moving all microservice events in almost real-time. As Kafka utilizes a clustered event-driven architecture, combined with AWS cloud features, it is able to automatically scale as the number of users increases. Figure BA-6 Below illustrates the general architecture of the processing pipeline.
         </p>
         <img src="images/processing_pipeline.png" style="display: block;
         text-align: center;
         margin: auto;" width="auto" height="auto"></img>
-        <div class="w3-center"><p><b>Figure BA-5.</b> Event-Driven Architecture of Processing Pipeline</p></div>
-        <p>Events are produced by the microservices through API calls to the Kafka cluster. Based on the topic of the event, the router module (within kafka) routes the message/request to different databases or applications such as elastic search or S3.The Kafka Consumer can take a message as an input and run different tasks including the decorating and routing of requests to the stream processing as a service platform. SPaaS will allow engineers to build and monitor their custom managed application while the platform can take care of scalability and operations.</p>
+        <div class="w3-center"><p><b>Figure BA-6.</b> Event-Driven Architecture of Processing Pipeline</p></div>
+        <p>Events are produced by the microservices through API calls to the Kafka cluster. Based on the topic of the event, the router module (within Kafka) routes the message/request to different databases or applications such as elastic search or S3.The Kafka Consumer can take a message as an input and run different tasks including the decorating and routing of requests to the stream processing as a service platform. SPaaS will allow engineers to build and monitor their custom managed application while the platform can take care of scalability and operations.</p>
     </div>
     </div>  
     <!-- END MAIN -->
